@@ -44,10 +44,10 @@ class EmbeddingSaverTXT(EmbeddingSaver):
 
     def add_embeddings(self, image_name: str, embeddings):
         for embedding in embeddings:
-            self._embeddings.append(f"{image_name} \t {self._emb_vector_to_str(embedding)} \n")
+            self._embeddings.append(f"{image_name} \t {self._embedding_vector_to_str(embedding)} \n")
 
     @staticmethod
-    def _emb_vector_to_str(embedding):
+    def _embedding_vector_to_str(embedding):
         return " ".join([str(value) for value in embedding])
 
     def _save_file(self):
