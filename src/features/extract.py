@@ -1,6 +1,6 @@
 import click
 
-from src.features.emdedding_extractor import EmbeddingModelInsightface
+from src.models.emdedding_extractor import EmbeddingModelInsightface
 from src.features.generate_embedding import FaceEmbeddingGenerator
 from src.utils.embedding_saver import  EmbeddingSaverTXT
 from src.utils.image_iterator import ImagePathIterator

@@ -1,7 +1,7 @@
 from typing import Iterator
 
 from src.utils.embedding_saver import EmbeddingSaver
-from src.features.emdedding_extractor import EmbeddingModel
+from src.models.emdedding_extractor import EmbeddingModel
 
 
 class FaceEmbeddingGenerator:
