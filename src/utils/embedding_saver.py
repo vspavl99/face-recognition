@@ -44,7 +44,7 @@ class EmbeddingSaverTXT(EmbeddingSaver):
 
     def add_embeddings(self, image_name: str, embeddings):
         for embedding in embeddings:
-            self._embeddings.append(f"{image_name} \t {self._embedding_vector_to_str(embedding)} \n")
+            self._embeddings.append(f"{image_name}\t{self._embedding_vector_to_str(embedding)}\n")
 
     @staticmethod
     def _embedding_vector_to_str(embedding):
