@@ -19,4 +19,4 @@ class EmbeddingModelInsightface(EmbeddingModel):
 
     def get_embeddings(self, image) -> List:
         predictions = self._app.get(image)
-        return [prediction.embeddings for prediction in predictions]
+        return [prediction['embedding'] for prediction in predictions]
