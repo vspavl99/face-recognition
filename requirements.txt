@@ -1,0 +1,6 @@
+click==8.0.3
+pandas==2.0.3
+onnxruntime-gpu==1.15.1
+onnxruntime==1.15.1
+insightface==0.7.3
+umap==0.1.1

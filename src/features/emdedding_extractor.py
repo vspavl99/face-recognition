@@ -19,4 +19,26 @@ class EmbeddingModelInsightface(EmbeddingModel):
 
     def get_embeddings(self, image) -> List:
         predictions = self._app.get(image)
+
+        predictions = self._filter_predictions(predictions)
         return [prediction['embedding'] for prediction in predictions]
+
+    @staticmethod
+    def _filter_predictions(predictions) -> list:
+        """
+        Keep only one face-detection with the largest square
+        :param predictions: list of all predictions on image
+        :return: face with the largest square
+        """
+
+        filtered_predictions = []
+
+        max_square = 0
+        for prediction in predictions:
+            square = (prediction['bbox'][2] - prediction['bbox'][0]) * (prediction['bbox'][3] - prediction['bbox'][1])
+
+            if square > max_square:
+                max_square = square
+                filtered_predictions = [prediction]
+
+        return filtered_predictions
