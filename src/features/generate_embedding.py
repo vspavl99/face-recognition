@@ -1,7 +1,6 @@
 from typing import Iterator
 
 from src.utils.embedding_saver import EmbeddingSaver
-from src.utils.image_iterator import ImagePathIterator
 from src.features.emdedding_extractor import EmbeddingModel
 
 
@@ -21,12 +20,6 @@ class FaceEmbeddingGenerator:
     def generate(self):
         for (image, image_name)  in self._images_iter:
             embeddings_per_image = self._model.get_embeddings(image)
-            self._embeddings_saver.add_embeddings(embeddings=embeddings_per_image, image_name=image)
+            self._embeddings_saver.add_embeddings(embeddings=embeddings_per_image, image_name=image_name)
 
         self._embeddings_saver.save()
-
-
-if __name__ == '__main__':
-    iter =  ImagePathIterator(image_dir='/home/vpavlishen/data_ssd/vpavlishen/test-task/clusters')
-    for num, i in enumerate(iter):
-        print(num)
