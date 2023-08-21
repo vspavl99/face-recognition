@@ -10,4 +10,4 @@ class FindSimilar:
 
     def check_neighborhoods(self, embedding):
         similarity = self._similarity.compute_similarity(self._anchor, embedding)
-        print(similarity)
+        return similarity

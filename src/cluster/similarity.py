@@ -11,5 +11,5 @@ class Similarity(Protocol):
 class SimilarityEuclidean(Similarity):
     def compute_similarity(self, embedding1, embedding2) -> float:
         return np.sqrt(
-            np.sum(embedding1 * embedding2)
+            np.sum((embedding1 - embedding2) ** 2)
         )
