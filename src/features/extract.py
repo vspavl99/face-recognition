@@ -2,7 +2,7 @@ import click
 
 from src.models.emdedding_extractor import EmbeddingModelInsightface
 from src.features.generate_embedding import FaceEmbeddingGenerator
-from src.utils.embedding_saver import  EmbeddingSaverTXT
+from src.utils.embeddings_saver import  EmbeddingSaverTXT
 from src.utils.image_iterator import ImagePathIterator
 
 @click.command()
@@ -11,10 +11,10 @@ from src.utils.image_iterator import ImagePathIterator
 def main(data_dir: str, output_path: str):
     images_iter = ImagePathIterator(image_dir=data_dir)
     model = EmbeddingModelInsightface()
-    embedding_saver = EmbeddingSaverTXT(txt_path=output_path)
+    embeddings_saver = EmbeddingSaverTXT(txt_path=output_path)
 
     face_embedding_generator = FaceEmbeddingGenerator(
-        model=model, images_iter=images_iter, embeddings_saver=embedding_saver
+        model=model, images_iter=images_iter, embeddings_saver=embeddings_saver
     )
     face_embedding_generator.generate()
 

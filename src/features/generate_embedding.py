@@ -1,6 +1,6 @@
 from typing import Iterator
 
-from src.utils.embedding_saver import EmbeddingSaver
+from src.utils.embeddings_saver import EmbeddingSaver
 from src.models.emdedding_extractor import EmbeddingModel
 
 
