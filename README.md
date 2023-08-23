@@ -46,6 +46,7 @@ python3 src/features/extract.py --data_dir="/home/vpavlishen/data_ssd/vpavlishen
 
 
 ## Results
+Embeddings projected into 2d space via umap algorithm:
 |                         Predictions                          |                        Targets                        |
 |:------------------------------------------------------------:|:-----------------------------------------------------:|
 | ![reports/figures/predictions.png](reports/figures/pred.png) | ![reports/figures/targets.png](reports/figures/gt.png) |
