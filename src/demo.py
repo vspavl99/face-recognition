@@ -40,6 +40,17 @@ def k_means():
     import numpy as np
     import pandas as pd
     from sklearn import metrics
+    from src.eval.eval import EvalClusteringMetrics
+
+    eval_metrics = EvalClusteringMetrics(
+        metrics={
+            "Rand_score": metrics.rand_score,
+            "Homogeneity score": metrics.homogeneity_score,
+            "Completeness score": metrics.completeness_score,
+            "V-Measure score": metrics.v_measure_score
+        }
+    )
+
     data = pd.read_csv('data/processed/test-task/clusters.csv', index_col=0)
     data = clusters_str_to_id(data)
     embeddings = EmbeddingReaderTXT(txt_path='data/processed/test-task/embeddings.txt').read()
@@ -53,10 +64,7 @@ def k_means():
     for image_name in image_names:
         y_true.append(data[data['file_name'] == image_name]['cluster_number'].values[0])
 
-    print(metrics.rand_score(y_true, y_pred))
-    print(metrics.homogeneity_score(y_true, y_pred))
-    print(metrics.completeness_score(y_true, y_pred))
-    print(metrics.v_measure_score(y_true, y_pred))
+    eval_metrics.compute_metrics(y_true, y_pred)
 
     resized_embeddings = resize_embedding(embeddings=embeddings, dim=2)
     import matplotlib.pyplot as plt
