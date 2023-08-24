@@ -4,3 +4,4 @@ onnxruntime-gpu==1.15.1
 onnxruntime==1.15.1
 insightface==0.7.3
 umap==0.1.1
+jupyter==1.0.0
