@@ -6,7 +6,7 @@ from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 
 
-from src.eval.eval import EvalClusteringMetrics
+from src.eval.eval import EvalClustering
 from src.utils.embeddings_reader import EmbeddingReaderTXT
 
 

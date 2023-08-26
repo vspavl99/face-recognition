@@ -2,13 +2,13 @@ from typing import Callable, List, Dict
 from abc import abstractmethod
 
 
-class EvalClustering:
+class EvalClusteringAbstract:
     @abstractmethod
     def compute_metrics(self, y_true, y_pred):
         pass
 
 
-class EvalClusteringMetrics(EvalClustering):
+class EvalClustering(EvalClusteringAbstract):
     def __init__(self, metrics: Dict[str, Callable]):
         self._metrics = metrics
 
