@@ -16,12 +16,22 @@ class EmbeddingReaderTXT(EmbeddingReader):
         """
         self._txt_path = txt_path
 
+        self._embeddings = {}
+        self.read()
+
     def read(self) -> dict:
-        embeddings = {}
 
         with open(self._txt_path, 'r') as file:
             for line in file.readlines():
                 image_name, embedding = line.split('\t')
-                embeddings[image_name] = np.fromstring(string=embedding, dtype=float, sep=' ')
+                self._embeddings[image_name] = np.fromstring(string=embedding, dtype=float, sep=' ')
 
-        return embeddings
+        return self._embeddings
+
+    @property
+    def embedding_names(self) -> list:
+        return list(self._embeddings.keys())
+
+    @property
+    def embedding_vectors(self) -> np.array:
+        return np.array(list(self._embeddings.values()))
