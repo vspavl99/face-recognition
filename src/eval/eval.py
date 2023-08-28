@@ -13,6 +13,9 @@ class EvalClustering(EvalClusteringAbstract):
         self._metrics = metrics
 
     def compute_metrics(self, labels, predictions):
+        result = {}
         for metric_name, func in self._metrics.items():
             value = func(labels, predictions)
             print(f"{metric_name}: {value}")
+            result[metric_name] = value
+        return result

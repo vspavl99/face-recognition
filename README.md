@@ -44,6 +44,11 @@ python3 src/features/extract.py --data_dir="/home/vpavlishen/data_ssd/vpavlishen
 
 ## Training and evaluating
 
+Find best number of clusters:
+```bash
+python3 src/models/tune_n_clusters.py
+```
+
 
 ## Results
 Embeddings projected into 2d space via umap algorithm:
