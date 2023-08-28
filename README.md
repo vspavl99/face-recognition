@@ -35,19 +35,20 @@ python3 src/data/process_raw_data.py --raw_data_path="<path to raw file.zip>"  -
 
 ## Extracting embeddings
 ```bash
-python3 src/features/extract.py --data_dir="<path folder with images>"  --output_path="<path for result file>" 
+python3 src/features/save_embedding.py --data_dir="<path folder with images>"  --output_path="<path for result file>" 
 ```
 example:
 ```bash
-python3 src/features/extract.py --data_dir="/home/vpavlishen/data_ssd/vpavlishen/test-task/clusters" --output_path="/home/vpavlishen/face-recognition/data/processed/test-task/embeddings.txt"
+python3 src/features/save_embedding.py --data_dir="/home/vpavlishen/data_ssd/vpavlishen/test-task/clusters" --output_path="/home/vpavlishen/face-recognition/data/processed/test-task/embeddings.txt"
 ```
 
 ## Training and evaluating
 
-Find best number of clusters:
+### Tuning params
 ```bash
-python3 src/models/tune_n_clusters.py
+python3 src/utils/tune_params.py
 ```
+
 
 
 ## Results

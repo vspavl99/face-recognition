@@ -41,4 +41,5 @@ def tune_mean_shift():
 
 
 if __name__ == '__main__':
-    tune_k_means()
+    print("K means n_cluster ", tune_k_means())
+    print("MeanShift bandwidth ", tune_mean_shift())
