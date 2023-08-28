@@ -63,3 +63,7 @@ class ClusterLabelsCSV(ClusterLabelsAbstract):
     @property
     def cluster_number(self) -> np.ndarray:
         return self._dataframe['cluster_number'].values
+
+    @property
+    def image_names(self) -> np.ndarray:
+        return self._dataframe['file_name'].values

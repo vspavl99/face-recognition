@@ -4,7 +4,7 @@ from abc import abstractmethod
 
 class EvalClusteringAbstract:
     @abstractmethod
-    def compute_metrics(self, y_true, y_pred):
+    def compute_metrics(self, labels, predictions):
         pass
 
 
@@ -13,9 +13,14 @@ class EvalClustering(EvalClusteringAbstract):
         self._metrics = metrics
 
     def compute_metrics(self, labels, predictions):
-        result = {}
         for metric_name, func in self._metrics.items():
             value = func(labels, predictions)
             print(f"{metric_name}: {value}")
-            result[metric_name] = value
-        return result
+
+
+class EvalClusteringTuner(EvalClusteringAbstract):
+    def __init__(self, metric: Callable):
+        self._metric = metric
+
+    def compute_metrics(self, labels, predictions) -> float:
+        return self._metric(labels, predictions)
