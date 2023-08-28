@@ -29,8 +29,8 @@ class KMeansClusteringWithTuning(KMeansClustering):
 
 
 class MeanShiftClustering(ClusterModel):
-    def __init__(self):
-        self._model = MeanShift(bandwidth=25)
+    def __init__(self, bandwidth=16):
+        self._model = MeanShift(bandwidth=bandwidth)
 
     def predict(self, data):
         predictions = self._model.fit_predict(data)

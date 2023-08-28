@@ -14,3 +14,7 @@ class KMeansPreprocessor(DataPreprocessor):
     def transform(self, data):
         scaled_data = self._scaler.fit_transform(data)
         return scaled_data
+
+class MeanShiftPreprocessor(DataPreprocessor):
+    def transform(self, data):
+        return data
