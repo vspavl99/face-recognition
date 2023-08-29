@@ -1,10 +1,11 @@
-from typing import Protocol, List
+from abc import abstractmethod
 
 from insightface.app import FaceAnalysis
 
 
-class EmbeddingModel(Protocol):
-    def get_embeddings(self, image) -> List:
+class EmbeddingModel:
+    @abstractmethod
+    def get_embeddings(self, image) -> list:
         """Return embeddings of all faces in image"""
 
 
@@ -17,7 +18,7 @@ class EmbeddingModelInsightface(EmbeddingModel):
         self._app = FaceAnalysis(allowed_modules=['detection', 'recognition'], providers=['CPUExecutionProvider'])
         self._app.prepare(ctx_id=0, det_size=(640, 640))
 
-    def get_embeddings(self, image) -> List:
+    def get_embeddings(self, image) -> list:
         predictions = self._app.get(image)
 
         predictions = self._filter_predictions(predictions)

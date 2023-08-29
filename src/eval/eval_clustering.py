@@ -1,4 +1,4 @@
-from typing import Callable, List, Dict
+from typing import Callable, Dict
 from abc import abstractmethod
 
 

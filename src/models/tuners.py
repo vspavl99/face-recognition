@@ -2,7 +2,7 @@ from abc import abstractmethod
 
 from sklearn.cluster import MeanShift
 
-from src.eval.eval import EvalClusteringAbstract
+from src.eval.eval_clustering import EvalClusteringAbstract
 from src.models.clustering import KMeansClustering
 
 

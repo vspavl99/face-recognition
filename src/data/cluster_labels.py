@@ -4,13 +4,13 @@ import pandas as pd
 import numpy as np
 
 
-class ClusterLabelsAbstract:
+class ClusterLabels:
     @abstractmethod
     def cluster_id(self):
         pass
 
 
-class ClusterLabelsCSV(ClusterLabelsAbstract):
+class ClusterLabelsCSV(ClusterLabels):
     """
     Reads true cluster labels from a csv file. Prepare dataframe for further processing
     """

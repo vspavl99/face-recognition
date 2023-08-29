@@ -2,8 +2,9 @@ from sklearn.metrics import v_measure_score
 
 from src.utils.embeddings_reader import EmbeddingReaderTXT
 from src.data.cluster_labels import ClusterLabelsCSV
-from src.eval.eval import EvalClusteringTuner
+from src.eval.eval_clustering import EvalClusteringTuner
 from src.models.tuners import MeanShiftTunner, KMeansTunner
+
 
 def embeddings_and_labels_init():
     _cluster_labels = ClusterLabelsCSV(file_path='data/processed/test-task/clusters.csv')
