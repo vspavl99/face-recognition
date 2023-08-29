@@ -45,9 +45,9 @@ Example of working can be founded in `reports/demo.ipynb`
 
 |                    | Background and face images | Face images clustering |
 |--------------------|:---------------------------|------------------------|
-| V-Measure score    | 0.3965                     | 0.9768                 |
-| Homogeneity score  | 0.6129                     | 0.8898                 |
-| Completeness score | 0.4815                     | 0.9313                 |
+| Homogeneity score  | 0.3965                     | 0.9768                 |
+| Completeness score | 0.6129                     | 0.8898                 |
+| V-Measure score    | 0.4815                     | 0.9313                 |
 
 
 Embeddings projected into 2d space via umap:
