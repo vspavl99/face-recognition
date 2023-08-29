@@ -50,10 +50,8 @@ Example of working can be founded in `reports/demo.ipynb`
 | Completeness score | 0.4815                     | 0.9313                 |
 
 
-Embeddings projected into 2d space via umap algorithm:
-|                         Predictions                          |                        Targets                        |
-|:------------------------------------------------------------:|:-----------------------------------------------------:|
-| ![reports/figures/predictions.png](reports/figures/predictions.png) | ![reports/figures/targets.png](reports/figures/targets.png) |
+Embeddings projected into 2d space via umap:
+![plot](reports/figures/plot.png)
 
 ### Tuning params
 Finding optimal parameters for clustering algorithms
@@ -62,5 +60,5 @@ python3 src/utils/tune_params.py
 ```
 
 |               | Kmeans <br/>n_cluster | MeanShift  <br/>bandwidth |
-|---------------|:-----------------|----------------------|
-| optimal value | 25               | 16                   |
+|---------------|:----------------------|---------------------------|
+| optimal value | 25                    | 16                        |

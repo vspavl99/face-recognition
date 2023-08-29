@@ -12,7 +12,7 @@ def vis_by_path(path: str):
 
 def vis_clusters(projected_embeddings, predicted_clusters, target_clusters):
 
-    plt.figure(figsize=(15, 10))
+    plt.figure(figsize=(10, 5))
 
     plt.subplot(1, 2, 1)
     plt.scatter(projected_embeddings[:, 0], projected_embeddings[:, 1], c=predicted_clusters, cmap='Paired')
