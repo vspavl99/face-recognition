@@ -36,7 +36,20 @@ python3 src/data/process_raw_data.py --raw_data_path="<path to raw file.zip>"  -
 python3 src/main.py --path_to_images="<path to dir with images>"  --path_to_target_clusters="<path to file.csv>"
 ```
 
+Example of working can be founded in `reports/demo.ipynb`
+
 # Results
+
+### Metrics:
+`src/main.py` output:
+
+|                    | Background and face images | Face images clustering |
+|--------------------|:---------------------------|------------------------|
+| V-Measure score    | 0.3965                     | 0.9768                 |
+| Homogeneity score  | 0.6129                     | 0.8898                 |
+| Completeness score | 0.4815                     | 0.9313                 |
+
+
 Embeddings projected into 2d space via umap algorithm:
 |                         Predictions                          |                        Targets                        |
 |:------------------------------------------------------------:|:-----------------------------------------------------:|
@@ -47,3 +60,7 @@ Finding optimal parameters for clustering algorithms
 ```bash
 python3 src/utils/tune_params.py
 ```
+
+|               | Kmeans <br/>n_cluster | MeanShift  <br/>bandwidth |
+|---------------|:-----------------|----------------------|
+| optimal value | 25               | 16                   |
