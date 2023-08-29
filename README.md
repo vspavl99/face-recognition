@@ -27,7 +27,7 @@ Each image correspond to certain cluster, which specified in `cluster.csv` file
 ### Preparing data
 Unzipping the data 
 ```bash
-python3 src/data/process_raw_data.py --raw_data_path="<path to raw file.zip>"  --baked_data_dir="<destination folder>"
+python3 src/data/process_raw_data.py --raw_data_path="<path to raw file.zip>"  --save_data_dir="<destination folder>"
 ```
 
 ##  Clusters images and evaluating
