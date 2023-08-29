@@ -12,7 +12,7 @@ def main(raw_data_path: str, save_data_dir: str):
     raw_data_path = Path(raw_data_path)
     save_data_dir = Path(save_data_dir)
 
-    unzip_archive(raw_data_path=raw_data_path, baked_data_dir=save_data_dir)
+    unzip_archive(raw_data_path=raw_data_path, save_data_dir=save_data_dir)
 
 
 def unzip_archive(raw_data_path: Path, save_data_dir: Path):
